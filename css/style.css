@@ -25,17 +25,14 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
 }
-
 .header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
-
 .header__logo {
   height: 3.5rem;
 }
-
 .header__text-box {
   position: absolute;
   top: 40%;
@@ -51,7 +48,6 @@ body {
   margin-bottom: 6rem;
   backface-visibility: hidden; /*removes animation shake */
 }
-
 .heading-primary--main {
   display: block;
   font-size: 6rem;
@@ -59,7 +55,6 @@ body {
   letter-spacing: 3.5rem;
   animation: moveInLeft 1s ease-out;
 }
-
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
@@ -114,22 +109,25 @@ body {
   transition: all 0.2s;
   position: relative;
 }
-
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
-
+.btn:hover::after {
+  transform: scaleX(1.5) scaleY(1.6);
+  opacity: 0;
+}
 .btn.active {
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
-
 .btn--white {
   background-color: #fff;
   color: #777;
 }
-
+.btn--white::after {
+  background-color: #fff;
+}
 .btn::after {
   content: "";
   display: inline-block;
@@ -142,16 +140,6 @@ body {
   z-index: -1;
   transition: all 0.4s;
 }
-
-.btn--white::after {
-  background-color: #fff;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.5) scaleY(1.6);
-  opacity: 0;
-}
-
 .btn--animated {
   animation: moveInBottom 1s ease-out 0.75s;
   animation-fill-mode: backwards;
